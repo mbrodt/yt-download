@@ -3,7 +3,7 @@
     <div class="max-w-md mx-auto flex justify-between items-center m-4">
       <p class="text-2xl">{{songsInList}} {{songsInList === 1 ? 'song' : 'songs'}} ready for download</p>
       <div>
-        <button @click.stop="downloadAll" type="button" class="rounded bg-orange font-bold leading-normal text-white py-2 px-5" :class="{'opacity-50 cursor-not-allowed': disableButton}" :disabled="disableButton">Download All</button>
+        <button @click.stop="downloadAll" type="button" class="rounded bg-orange font-bold leading-normal text-white py-2 px-5 hover:bg-orange-dark" :class="{'opacity-50 cursor-not-allowed hover:bg-orange': disableButton}" :disabled="disableButton">Download All</button>
       </div>
     </div>
     <ul v-show="showSongs" class="max-w-md mx-auto list-reset text-left">

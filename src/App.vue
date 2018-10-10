@@ -5,7 +5,7 @@
       <button @click="getVideos" class="rounded border-4 border-orange p-4 text-white text-xl my-4 hover:bg-orange"> Get videos </button>
       <h2 v-if="isDownloading" class="text-white">DOWNLOADING!!</h2>
       <div>
-        <ul class="list-reset grid-container">
+        <ul class="list-reset grid-container mb-32">
           <song-card @add="addToDownloads" v-for="song in fetchedVideos" :key="song.title" :song="song" :disableButton="getIndex(song) >= 0"></song-card>
         </ul>
       </div>
