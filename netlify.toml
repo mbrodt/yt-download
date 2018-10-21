@@ -1,4 +1,4 @@
 [build]
-  Functions = "lambda"
+  Functions = "./lambda"
   Publish = "dist"
-  Command = "npm run build:lambda"
+  Command = "npm run mybuild"
