@@ -1,6 +1,6 @@
 exports.handler = (event, context, callback) => {
   callback(null, {
     statusCode: 200,
-    body: "DID IT WORK?!"
+    body: "IT FUCKING DID"
   })
 }
