@@ -7,7 +7,7 @@
     "serve": "vue-cli-service serve",
     "mybuild": "vue-cli-service build",
     "start:lambda": "netlify-lambda serve src/lambda",
-    "build:lambda": "netlify-lambda build src/lambda"
+    "build:lambda": "vue-cli-service build & netlify-lambda build src/lambda"
   },
   "dependencies": {
     "axios": "^0.18.0",
