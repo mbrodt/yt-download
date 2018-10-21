@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "concurrently \"npm run start:lambda\" \"npm run serve\"",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build & npm run build:lambda",
+    "mybuild": "vue-cli-service build & npm run build:lambda",
     "start:lambda": "netlify-lambda serve src/lambda",
     "build:lambda": "netlify-lambda build src/lambda"
   },
