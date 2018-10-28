@@ -7,7 +7,7 @@
       </div>
     </div>
     <ul v-show="showSongs" class="max-w-md mx-auto list-reset text-left">
-      <li v-for="song in toDownload" :key="song" class="flex justify-between my-2">
+      <li v-for="song in toDownload" :key="song.url" class="flex justify-between my-2">
         <p class="text-lg w-5/6">{{song.title}} <span class="text-xs">({{song.duration}})</span></p> <span @click.stop="removeSong(song)" class="text-sm text-grey-dark w-1/6 underline text-center">Remove</span>
       </li>
 
@@ -40,11 +40,16 @@ export default {
     },
     downloadAll() {
       this.$emit("start-download")
-      // console.log("download")
-      // axios.get("http://localhost:3000").then(res => console.log("res", res))
       let songs = this.toDownload
-      axios
-        .post("http://localhost:3000/download", songs)
+      const SERVER_URL = process.env.VUE_APP_SERVER_URL
+      console.log("songs", songs)
+      axios({
+        method: "post",
+        url: SERVER_URL + "/download",
+        data: {
+          songs: songs
+        }
+      })
         .then(res => {
           console.log("response", res)
           this.$emit("got-urls", res.data)
